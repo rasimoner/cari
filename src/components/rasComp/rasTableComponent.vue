@@ -1,18 +1,29 @@
 <template>
-    <div>
-        <v-app id="inspire">
-            <div>
-                <v-data-table
-                        :headers="headers"
-                        :items="items"
-                        :options.sync="options"
-                        :server-items-length="totalItems"
-                        :loading="loading"
-                        class="elevation-1"
+    <v-app id="inspire">
+        <v-card>
+            <v-card-title>
+                Nutrition
+                <v-spacer/>
+                <v-text-field
+                        v-model="search"
+                        append-icon="search"
+                        label="Search"
+                        single-line
+                        hide-details
                 />
-            </div>
-        </v-app>
-    </div>
+            </v-card-title>
+            <v-spacer/>
+            <v-data-table
+                    :headers="headers"
+                    :items="items"
+                    :options.sync="options"
+                    :server-items-length="totalItems"
+                    :search="search"
+                    :loading="loading"
+                    class="elevation-1"
+            />
+        </v-card>
+    </v-app>
 </template>
 
 <script lang="ts">
@@ -22,18 +33,10 @@
 
     @Component
     export default class RasTableComponent extends Vue {
-        name: string = "rasTableComponent"
+        name: string = "rasTableComponent";
+        search: string = '';
         totalItems: number = 0;
-        items: RasTableModel[] = [
-            {
-                name: '',
-                calories: 0,
-                fat: 0,
-                carbs: 0,
-                protein: 0,
-                iron: '',
-            }
-        ];
+        items: RasTableModel[] = [];
         loading: boolean = true;
         options: any = {};
         headers: any = [
@@ -50,12 +53,16 @@
             {text: 'Iron (%)', value: 'iron'},
         ];
 
+        @Watch("search")
         @Watch("options", {deep: true, immediate: true})
         async handler() {
+            // if (this.search != '' && this.search.length<3) {
+            //     console.log("asd",this.search);
+            //     return;
+            // }
             await this.getDataFromApi()
-                .then((res: ResultRasTableModel|any) =>
-                {
-                    if(res.items && res.total){
+                .then((res: ResultRasTableModel | any) => {
+                    if (res.items && res.total) {
                         this.items = res.items;
                         this.totalItems = res.total;
                     }
@@ -63,11 +70,28 @@
         }
 
         getDataFromApi() {
-            this.loading = true;
             return new Promise((resolve, reject) => {
+                this.loading = true;
                 const {sortBy, sortDesc, page, itemsPerPage} = this.options;
 
+                // let items: RasTableModel[] = [];
+                // if (this.items.length && this.search.length<3) {
+                //     console.log("filterTime", this.search);
+                //     items = this.items.filter(
+                //         x => x.name.toLowerCase()
+                //             .indexOf(this.search.toLowerCase()) > -1
+                //     );
+                // } else {
+                //
+                //     console.log("FirstTime",this.search);
+                //     items = this.getItems();
+                // }
                 let items = this.getItems();
+                // this.filterItems(items);
+                items = this.getItems().filter(
+                    x => x.name.toLowerCase()
+                        .indexOf(this.search.toLowerCase()) > -1
+                );
                 let total = items.length;
 
                 if (sortBy && sortBy.length === 1 && sortDesc.length === 1) {
@@ -103,7 +127,7 @@
         }
 
         getItems() {
-            return [
+            let tableModel: RasTableModel[] = [
                 {
                     name: 'Frozen Yogurt',
                     calories: 159,
@@ -113,7 +137,7 @@
                     iron: '1%',
                 },
                 {
-                    name: 'Ice cream sandwich',
+                    name: 'FoIce cream sandwich',
                     calories: 237,
                     fat: 9.0,
                     carbs: 37,
@@ -184,7 +208,8 @@
                     protein: 7,
                     iron: '6%',
                 },
-            ]
+            ];
+            return tableModel;
         }
     }
 </script>
