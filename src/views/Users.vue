@@ -1,9 +1,14 @@
 <template>
-    <div>
-        <users-component :details="details"/>
-        <ras-table-component/>
-    </div>
+    <v-container>
+        <v-layout>
+            <v-flex xs12>
+                <users-component :details="details"/>
+                <ras-table-component/>
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template>
+
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
     import UsersComponent from "@/components/UsersComponent.vue";

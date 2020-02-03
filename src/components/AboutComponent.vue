@@ -1,39 +1,43 @@
 <template>
-    <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
-            necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
-            expedita facilis officiis!</p>
-    </div>
+    <v-container>
+        <v-layout>
+            <v-flex xs12>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet autem blanditiis cum ex fuga iste
+                    necessitatibus nemo nobis non perspiciatis, possimus quo recusandae saepe sapiente temporibus! Debitis
+                    expedita facilis officiis!</p>
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template>
 
 <script lang="ts">

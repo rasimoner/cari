@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-    import {Vue,Component} from "vue-property-decorator";
+    import {Vue, Component} from "vue-property-decorator";
     import router from '@/router';
     import {RouterItemsModel} from '@/components/app/router-items-model.interface.ts'
 

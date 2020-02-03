@@ -1,5 +1,5 @@
 <template>
-    <v-app id="inspire">
+    <v-app>
         <v-card>
             <v-card-title>
                 Nutrition
