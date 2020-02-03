@@ -5,6 +5,8 @@
                 <h1 class="display-1">About Page</h1>
                 <br>
                 <about-component/>
+                <br>
+                <br>
             </v-flex>
         </v-layout>
     </v-container>
