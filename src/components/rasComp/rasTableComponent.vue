@@ -132,10 +132,6 @@
         @Watch("search")
         @Watch("options", {deep: true, immediate: true})
         async handler() {
-            // if (this.search != '' && this.search.length<3) {
-            //     console.log("asd",this.search);
-            //     return;
-            // }
             await this.getDataFromApi()
                 .then((res: ResultRasTableModel | any) => {
                     if (res.items && res.total) {
@@ -182,21 +178,7 @@
             return new Promise((resolve, reject) => {
                 this.loading = true;
                 const {sortBy, sortDesc, page, itemsPerPage} = this.options;
-
-                // let items: RasTableModel[] = [];
-                // if (this.items.length && this.search.length<3) {
-                //     console.log("filterTime", this.search);
-                //     items = this.items.filter(
-                //         x => x.name.toLowerCase()
-                //             .indexOf(this.search.toLowerCase()) > -1
-                //     );
-                // } else {
-                //
-                //     console.log("FirstTime",this.search);
-                //     items = this.getItems();
-                // }
                 let items = this.getItems();
-                // this.filterItems(items);
                 items = this.getItems().filter(
                     x => x.name.toLowerCase()
                         .indexOf(this.search.toLowerCase()) > -1
