@@ -25,6 +25,7 @@
     }
   })
   export default class App extends Vue {
+    name: string = "App";
     title: string = "";
 
     constructor() {
