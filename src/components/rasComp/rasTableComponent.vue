@@ -78,9 +78,6 @@
         </v-icon>
       </template>
     </v-data-table>
-    <br />
-    <br />
-    <br />
   </v-card>
 </template>
 
@@ -178,7 +175,7 @@ export default class RasTableComponent extends Vue {
   }
 
   getDataFromApi() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       this.loading = true;
       const { sortBy, sortDesc, page, itemsPerPage } = this.options;
       let items = this.getItems();
@@ -308,4 +305,4 @@ export default class RasTableComponent extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped />
