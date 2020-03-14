@@ -93,26 +93,13 @@ export default class RasTableComponent extends Vue {
   @Prop()
   readonly tumItemler: any;
   @Prop()
-  readonly headerlar: any;
+  readonly headers: any;
 
   search: string = "";
   totalItems: number = 0;
   items: RasTableModel[] = [];
   loading: boolean = true;
   options: any = {};
-  headers: any = [
-    {
-      text: "Dessert (100g serving)",
-      align: "left",
-      value: "name"
-    },
-    { text: "Calories", value: "calories" },
-    { text: "Fat (g)", value: "fat" },
-    { text: "Carbs (g)", value: "carbs" },
-    { text: "Protein (g)", value: "protein" },
-    { text: "Iron (%)", value: "iron" },
-    { text: "Actions", value: "action", sortable: false }
-  ];
   dialog: boolean = false;
   editedIndex: number = -1;
   editedItem: RasTableModel = {
