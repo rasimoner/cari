@@ -8,9 +8,7 @@
           :table-title="tableTitle"
         >
           <template v-slot:item.action="{ item }">
-            <v-icon small class="mr-2" @click="editItem(item)">
-              edit
-            </v-icon>
+            <v-icon small class="mr-2" @click="editItem(item)"> edit </v-icon>
             <v-icon small class="mr-2" @click="deleteItem(item)">
               delete
             </v-icon>
@@ -85,8 +83,8 @@ import { RasTableModel } from "@/models/ras-table-model.interface";
 @Component({
   components: {
     RasTableComponent,
-    "users-component": UsersComponent
-  }
+    "users-component": UsersComponent,
+  },
 })
 export default class Users extends Vue {
   name: string = "Users";
@@ -95,29 +93,29 @@ export default class Users extends Vue {
   details: UsersDetailModel[] = [
     {
       title: "12",
-      subTitle: "Files"
+      subTitle: "Files",
     },
     {
       title: "2GB",
-      subTitle: "Used"
+      subTitle: "Used",
     },
     {
       title: "24,6$",
-      subTitle: "Spent"
-    }
+      subTitle: "Spent",
+    },
   ];
   headers: RasTableHeaders[] = [
     {
       text: "Dessert (100g serving)",
       align: "left",
-      value: "name"
+      value: "name",
     },
     { text: "Calories", value: "calories" },
     { text: "Fat (g)", value: "fat" },
     { text: "Carbs (g)", value: "carbs" },
     { text: "Protein (g)", value: "protein" },
     { text: "Iron (%)", value: "iron" },
-    { text: "Actions", value: "action", sortable: false }
+    { text: "Actions", value: "action", sortable: false },
   ];
   tableTitle: string = "User Formu";
   items: RasTableModel[] = [];
@@ -126,14 +124,14 @@ export default class Users extends Vue {
     calories: 0,
     fat: 0,
     carbs: 0,
-    protein: 0
+    protein: 0,
   };
   defaultItem: RasTableModel = {
     name: "",
     calories: 0,
     fat: 0,
     carbs: 0,
-    protein: 0
+    protein: 0,
   };
   get modalFormTitle() {
     return this.editedIndex === -1 ? "New Item" : "Edit Item";
@@ -173,7 +171,7 @@ export default class Users extends Vue {
         fat: 6.0,
         carbs: 24,
         protein: 4.0,
-        iron: "1%"
+        iron: "1%",
       },
       {
         name: "FoIce cream sandwich",
@@ -181,7 +179,7 @@ export default class Users extends Vue {
         fat: 9.0,
         carbs: 37,
         protein: 4.3,
-        iron: "1%"
+        iron: "1%",
       },
       {
         name: "Eclair",
@@ -189,7 +187,7 @@ export default class Users extends Vue {
         fat: 16.0,
         carbs: 23,
         protein: 6.0,
-        iron: "7%"
+        iron: "7%",
       },
       {
         name: "Cupcake",
@@ -197,7 +195,7 @@ export default class Users extends Vue {
         fat: 3.7,
         carbs: 67,
         protein: 4.3,
-        iron: "8%"
+        iron: "8%",
       },
       {
         name: "Gingerbread",
@@ -205,7 +203,7 @@ export default class Users extends Vue {
         fat: 16.0,
         carbs: 49,
         protein: 3.9,
-        iron: "16%"
+        iron: "16%",
       },
       {
         name: "Jelly bean",
@@ -213,7 +211,7 @@ export default class Users extends Vue {
         fat: 0.0,
         carbs: 94,
         protein: 0.0,
-        iron: "0%"
+        iron: "0%",
       },
       {
         name: "Lollipop",
@@ -221,7 +219,7 @@ export default class Users extends Vue {
         fat: 0.2,
         carbs: 98,
         protein: 0,
-        iron: "2%"
+        iron: "2%",
       },
       {
         name: "Honeycomb",
@@ -229,7 +227,7 @@ export default class Users extends Vue {
         fat: 3.2,
         carbs: 87,
         protein: 6.5,
-        iron: "45%"
+        iron: "45%",
       },
       {
         name: "Donut",
@@ -237,7 +235,7 @@ export default class Users extends Vue {
         fat: 25.0,
         carbs: 51,
         protein: 4.9,
-        iron: "22%"
+        iron: "22%",
       },
       {
         name: "KitKat",
@@ -245,8 +243,8 @@ export default class Users extends Vue {
         fat: 26.0,
         carbs: 65,
         protein: 7,
-        iron: "6%"
-      }
+        iron: "6%",
+      },
     ];
     return tableModel;
   }

@@ -1,4 +1,4 @@
 export interface UsersDetailModel {
-    title: string,
-    subTitle: string
+  title: string;
+  subTitle: string;
 }

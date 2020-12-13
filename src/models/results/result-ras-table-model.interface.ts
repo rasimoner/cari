@@ -1,4 +1,4 @@
 export interface ResultRasTableModel {
-    total?: number,
-    items?: []
+  total?: number;
+  items?: [];
 }

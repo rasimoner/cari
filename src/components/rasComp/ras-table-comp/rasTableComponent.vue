@@ -67,13 +67,13 @@ export default class RasTableComponent extends Vue {
   }
 
   getTableActions() {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       this.loading = true;
       const { sortBy, sortDesc, page, itemsPerPage } = this.options;
       let items: any[] = [];
       items = this.localItems;
       items = items.filter(
-        x => x.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1
+        (x) => x.name.toLowerCase().indexOf(this.search.toLowerCase()) > -1
       );
       let total = items.length;
 
@@ -103,7 +103,7 @@ export default class RasTableComponent extends Vue {
         this.loading = false;
         resolve({
           items,
-          total
+          total,
         });
       }, 1000);
     });

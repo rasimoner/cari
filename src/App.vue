@@ -20,8 +20,8 @@ import AppFooter from "@/components/app/AppFooterComponent.vue";
 @Component({
   components: {
     "app-footer": AppFooter,
-    "app-nav-bar": AppNavBarComponent
-  }
+    "app-nav-bar": AppNavBarComponent,
+  },
 })
 export default class App extends Vue {
   name: string = "App";
