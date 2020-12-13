@@ -78,7 +78,7 @@
 import { Component, Vue } from "vue-property-decorator";
 import UsersComponent from "@/components/UsersComponent.vue";
 import { UsersDetailModel } from "@/models/users-detail-model.interface";
-import RasTableComponent from "@/components/rasComp/rasTableComponent.vue";
+import RasTableComponent from "@/components/rasComp/ras-table-comp/rasTableComponent.vue";
 import { RasTableHeaders } from "@/components/rasComp/ras-table-comp/ras-table-headers.interface";
 import { RasTableModel } from "@/models/ras-table-model.interface";
 

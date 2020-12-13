@@ -60,6 +60,7 @@ export default class RasTableComponent extends Vue {
       }
     });
   }
+
   @Watch("items", { immediate: true })
   getTumItemsChanged() {
     if (this.items) return (this.localItems = this.items);
