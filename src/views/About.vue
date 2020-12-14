@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import AboutComponent from "@/components/AboutComponent.vue";
+import AboutComponent from "@/components/pages/AboutComponent.vue";
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({
