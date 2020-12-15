@@ -7,7 +7,7 @@
           :items="getItems()"
           :table-title="tableTitle"
         >
-          <template v-slot:item.action="{ item }">
+          <template v-slot:item.actions="{ item }">
             <v-icon small class="mr-2" @click="editItem(item)"> edit </v-icon>
             <v-icon small class="mr-2" @click="deleteItem(item)">
               delete
@@ -133,9 +133,11 @@ export default class Users extends Vue {
     carbs: 0,
     protein: 0,
   };
+
   get modalFormTitle() {
     return this.editedIndex === -1 ? "New Item" : "Edit Item";
   }
+
   close() {
     this.dialog = false;
     setTimeout(() => {
@@ -152,6 +154,7 @@ export default class Users extends Vue {
     }
     this.close();
   }
+
   editItem(item: RasTableModel) {
     this.editedIndex = this.items.indexOf(item);
     this.editedItem = Object.assign({}, item);
@@ -163,6 +166,7 @@ export default class Users extends Vue {
     confirm("Are you sure you want to delete this item?") &&
       this.items.splice(index, 1);
   }
+
   getItems() {
     let tableModel: RasTableModel[] = [
       {
