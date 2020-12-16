@@ -1,20 +1,20 @@
 <template>
   <v-app app>
+    <app-nav-bar />
+
     <v-row class="flex-child">
-      <v-col class="d-flex" cols="0" md="0">
-        <app-nav-bar />
-      </v-col>
-      <v-col class="d-flex" cols="12" md="12">
+      <v-col class="d-flex mt-7" cols="12" md="12">
         <router-view />
       </v-col>
     </v-row>
-    <app-footer class="hasMobileFooter" />
+
+    <app-footer class="has-mobile-footer" />
   </v-app>
 </template>
 
 <script lang="ts">
-import AppNavBarComponent from "@/components/app/AppNavbarComponent.vue";
 import { Component, Vue } from "vue-property-decorator";
+import AppNavBarComponent from "@/components/app/AppNavbarComponent.vue";
 import AppFooter from "@/components/app/AppFooterComponent.vue";
 
 @Component({
@@ -34,13 +34,13 @@ export default class App extends Vue {
 }
 </script>
 <style scoped>
-.hasMobileFooter {
+.has-mobile-footer {
   display: none;
   text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-  .hasMobileFooter {
+  .has-mobile-footer {
     display: block;
   }
 }

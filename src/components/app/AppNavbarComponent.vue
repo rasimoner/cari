@@ -1,17 +1,10 @@
 <template>
-  <v-sheet class="overflow-hidden">
-    <v-container>
-      <v-row align="center" justify="center">
-        <v-btn
-          style="border-radius: 5px"
-          color="pink"
-          dark
-          @click.stop="drawer = !drawer"
-        >
-          {{ setActivePageName() }}
-        </v-btn>
-      </v-row>
-    </v-container>
+  <div class="overflow-hidden pb-3" :class="[{ sticky: !drawer }]">
+    <div class="pl-3 ml-1 mt-1">
+      <v-btn class="radius-5" color="pink" dark @click.stop="drawerChange">
+        {{ setActivePageName() }}
+      </v-btn>
+    </div>
 
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list-item>
@@ -20,7 +13,9 @@
         </v-list-item-avatar>
 
         <v-list-item-content>
-          <v-list-item-title>Cari App</v-list-item-title>
+          <v-list-item-title>
+            {{ appName }}
+          </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -38,49 +33,60 @@
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>
+              {{ item.title }}
+            </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-  </v-sheet>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import { RouterItemsModel } from "@/components/app/router-items-model.interface.ts";
+import { ROUTER_ITEMS } from "@/components/app/router-items.const";
 
 @Component
 export default class AppNavBarComponent extends Vue {
   name: string = "AppNavBarComponent";
+
   drawer: boolean = false;
-  routerItems: RouterItemsModel[] = [
-    { title: "Anasayfa", icon: "mdi-home-city", path: "/" },
-    { title: "Hakkımızda", icon: "mdi-information", path: "/about" },
-    {
-      title: "Kullanıcılar",
-      icon: "mdi-account-group-outline",
-      path: "/users",
-    },
-    { title: "Hesabım", icon: "mdi-account", path: "/about" },
-  ];
+  appName: string = "Cari App";
+
+  get routerItems() {
+    return ROUTER_ITEMS;
+  }
 
   setActivePageName() {
-    let pageName = this.routerItems.find(
+    const pageName = this.routerItems.find(
       (x) => x.path == this.$store.getters.getCurrentPage
     );
-    if (pageName) {
-      return pageName.title;
-    }
+    if (pageName) return pageName.title;
   }
+
+  drawerChange() {
+    this.drawer = !this.drawer;
+  }
+
   onUrlChange(path: string) {
-    if (path == this.$store.getters.getCurrentPage) {
-      return;
-    }
+    if (path == this.$store.getters.getCurrentPage) return;
+
     this.$store.dispatch("changeCurrentPage", path);
     this.$router.replace(path);
   }
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.radius-5 {
+  border-radius: 5px;
+}
+</style>
