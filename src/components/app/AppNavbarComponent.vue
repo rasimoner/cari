@@ -2,7 +2,7 @@
   <div class="overflow-hidden pb-3" :class="[{ sticky: !drawer }]">
     <div class="pl-3 ml-1 mt-1">
       <v-btn class="radius-5" color="pink" dark @click.stop="drawerChange">
-        {{ setActivePageName() }}
+        {{ activePageName }}
       </v-btn>
     </div>
 
@@ -58,11 +58,14 @@ export default class AppNavBarComponent extends Vue {
     return ROUTER_ITEMS;
   }
 
-  setActivePageName() {
-    const pageName = this.routerItems.find(
-      (x) => x.path == this.$store.getters.getCurrentPage
+  get activePage() {
+    return this.routerItems.find(
+      (item) => item.path == this.$store.getters.getCurrentPage
     );
-    if (pageName) return pageName.title;
+  }
+
+  get activePageName():string {
+    return this.activePage? this.activePage.title : "";
   }
 
   drawerChange() {

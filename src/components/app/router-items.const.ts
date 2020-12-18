@@ -1,12 +1,17 @@
 import { RouterItemsModel } from "@app/router-items-model.interface";
+import { PAGEICONS } from "@/assets/using-icons.const";
 
 export const ROUTER_ITEMS: RouterItemsModel[] = [
-  { title: "Anasayfa", icon: "mdi-home-city", path: "/" },
-  { title: "Hakkımızda", icon: "mdi-information", path: "/about" },
+  { title: "Anasayfa", icon: PAGEICONS.icon_page_home, path: "/" },
+  {
+    title: "Hakkımızda",
+    icon: PAGEICONS.icon_page_information,
+    path: "/about",
+  },
   {
     title: "Kullanıcılar",
-    icon: "mdi-account-group-outline",
+    icon: PAGEICONS.icon_page_users,
     path: "/users",
   },
-  { title: "Hesabım", icon: "mdi-account", path: "/about" },
+  { title: "Hesabım", icon: PAGEICONS.icon_page_account, path: "/about" },
 ];
