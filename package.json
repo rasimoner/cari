@@ -33,7 +33,6 @@
     "deepmerge": "^4.2.2",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "fibers": "^4.0.3",
     "gh-pages": "^2.2.0",
     "material-design-icons-iconfont": "^5.0.1",
     "sass": "^1.30.0",
